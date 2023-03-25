@@ -4,12 +4,15 @@
 /* form styling */
 
 label {
-	margin-right: .2em;
-	width: 2em;  /* I made this deliberately wide ? come up with your own optimal width */
+	margin-right: 0.3em;
+	width: 3em;  /* I made this deliberately wide ? come up with your own optimal width */
 	display: inline-block; /* width will not work for ?inline? elements such as ?label?. Therefore we need to set it to ?inline-block? */
 	text-align: right;
 }
-select:focus, select:active, input:focus, input:active, input:focus + label, input:active + label, label[for]:focus, label[for]:active {
+select:focus, select:active,
+input:focus, input:active,
+input:focus + label, input:active + label,
+label[for]:focus, label[for]:active {
 	color: #FFF !important;
 	background-color: #BB3D2F !important;}
 
@@ -63,7 +66,7 @@ div#formcol1 input {
 
 #multchoice {
 	clear:left;
-	margin-left:1%;	
+	margin-left:0%;
 }
 
 #multchoice input, #multchoice span {
@@ -71,12 +74,12 @@ div#formcol1 input {
 }
 
 #multchoice span {	
-	margin: 0 .3em;
+	margin: 0.3em .3em;
 }
 
 .submit-button {
 	margin:2em 0;
-	float:right;
+	float:left;
 	width:70%;
 }
 
