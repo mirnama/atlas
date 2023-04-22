@@ -7,3 +7,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .content {
     max-width:1100px;margin-top:80px;margin-bottom:80px
 }
+select:focus, select:active, input:focus, input:active, input:focus + label, input:active + label, label[for]:focus, label[for]:active {
+    color: #FFF !important;
+    background-color: #BB3D2F !important;}
