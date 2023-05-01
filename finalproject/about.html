@@ -148,27 +148,31 @@
 </div>
 
 <!-- Contact -->
-<div class="w3-center w3-padding-64" id="contact">
+<div class="w3-center w3-padding-64">
     <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
 </div>
 
-<form class="w3-container" action="/action_page.php" target="_blank">
+<form id="contact" class="w3-container"  action="/action_page.php" target="_blank">
     <fieldset>
         <div class="w3-section">
-            <label>Name</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" aria-label="Name" required>
-        </div>
-        <div class="w3-section">
-            <label>Email</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" aria-label="Email" required>
+            <label for="#name">Name</label>
+            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" id="#name" type="name" name="name"
+                   required aria-invalid="false">
+            <span id="nameError" role="alert" aria-live="assertive" aria-atomic="true" style="display:none;"></span>
+
+            <label for="#email">Email</label>
+            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" id="#email" type="text" name="email"
+                   aria-label="Email" required aria-invalid="false">
+            <span id="emailError" role="alert" aria-live="assertive" aria-atomic="true" style="display:none;"></span>
         </div>
         <div class="w3-section">
             <label>Subject</label>
             <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" aria-label="Subject" required>
         </div>
         <div class="w3-section">
-            <label>Message</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" aria-label="Message" required>
+            <label for="#massage">Message</label>
+            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" id="#massage" name="Message" aria-label="Message" required>
+            <span id="messageError" role="alert" aria-live="assertive" aria-atomic="true" style="display:none;"></span>
         </div>
     </fieldset>
 
@@ -194,6 +198,53 @@
 </footer>
 
 </head>
+<script>
+    const form = document.querySelector('#myForm');
 
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const nameInput = form.querySelector('#name');
+        const emailInput = form.querySelector('#email');
+        const messageInput = form.querySelector('#message');
+        const nameError = form.querySelector('#nameError');
+        const emailError = form.querySelector('#emailError');
+        const messageError = form.querySelector('#messageError');
+
+        if (nameInput.validity.valueMissing) {
+            nameInput.setAttribute('aria-invalid', 'true');
+            nameError.textContent = 'Please enter your name.';
+            nameError.style.display = 'block';
+        } else {
+            nameInput.setAttribute('aria-invalid', 'false');
+            nameError.textContent = '';
+            nameError.style.display = 'none';
+        }
+
+        if (emailInput.validity.valueMissing || emailInput.validity.typeMismatch) {
+            emailInput.setAttribute('aria-invalid', 'true');
+            emailError.textContent = 'Please enter a valid email address.';
+            emailError.style.display = 'block';
+        } else {
+            emailInput.setAttribute('aria-invalid', 'false');
+            emailError.textContent = '';
+            emailError.style.display = 'none';
+        }
+
+        if (messageInput.validity.valueMissing) {
+            messageInput.setAttribute('aria-invalid', 'true');
+            messageError.textContent = 'Please enter a message.';
+            messageError.style.display = 'block';
+        } else {
+            messageInput.setAttribute('aria-invalid', 'false');
+            messageError.textContent = '';
+            messageError.style.display = 'none';
+        }
+
+        if (form.checkValidity()) {
+            form.submit();
+        }
+    });
+</script>
 </body>
 </html>
