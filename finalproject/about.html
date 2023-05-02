@@ -154,24 +154,27 @@
 
 <form id="contact" class="w3-container"  action="/action_page.php" target="_blank">
     <fieldset>
+        <legend>Contact Street Business School</legend>
         <div class="w3-section">
             <label for="#name">Name</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" id="#name" type="name" name="name"
-                   required aria-invalid="false">
+            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" id="#name" type="name"
+                   name="name" aria-label="Name field"
+                   required >
             <span id="nameError" role="alert" aria-live="assertive" aria-atomic="true" style="display:none;"></span>
 
             <label for="#email">Email</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" id="#email" type="text" name="email"
-                   aria-label="Email" required aria-invalid="false">
+            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" id="#email" type="text"
+                   name="email"
+                   aria-label="Email" required>
             <span id="emailError" role="alert" aria-live="assertive" aria-atomic="true" style="display:none;"></span>
-        </div>
-        <div class="w3-section">
+
             <label>Subject</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" aria-label="Subject" required>
-        </div>
-        <div class="w3-section">
+            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject"
+                   aria-label="Subject" required>
+
             <label for="#massage">Message</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" id="#massage" name="Message" aria-label="Message" required>
+            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" id="#massage" name="Message"
+                   aria-label="Message" required>
             <span id="messageError" role="alert" aria-live="assertive" aria-atomic="true" style="display:none;"></span>
         </div>
     </fieldset>

@@ -1,12 +1,15 @@
-
-
+h4{
+    color: #0000FF;
+}
 html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
-html,body,h1,h2,h3,h4{color: black}
+
 .mySlides {display:none}
 .w3-tag, .fa {cursor:pointer}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
 .content {
-    max-width:1100px;margin-top:80px;margin-bottom:80px
+    max-width:1100px;
+    margin-top:80px;
+    margin-bottom:80px
 }
 select:focus, select:active, input:focus, input:active, input:focus + label, input:active + label, label[for]:focus, label[for]:active {
     color: #FFF !important;
